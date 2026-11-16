@@ -1,0 +1,38 @@
+{
+  "name": "@intentsolutionsio/notion-pack",
+  "version": "1.40.1",
+  "description": "Operator-grade Notion pack with 32 current access, data-source, content, webhook, security, reliability, and migration workflows",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "skills/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "notion",
+    "data-source",
+    "content",
+    "webhooks",
+    "security",
+    "governance",
+    "ai-skills",
+    "saas-pack"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+    "directory": "plugins/saas-packs/notion-pack"
+  },
+  "homepage": "https://tonsofskills.com/plugins/notion-pack/",
+  "publishConfig": {
+    "access": "public"
+  }
+}

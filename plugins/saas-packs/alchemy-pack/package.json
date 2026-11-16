@@ -1,0 +1,36 @@
+{
+  "name": "@intentsolutionsio/alchemy-pack",
+  "version": "2.0.0",
+  "description": "Evidence-backed Alchemy operator workflows for current Node, Data, Portfolio, NFT, Wallet, Notify, Admin, reliability, security, and migration contracts (18 skills)",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "skills/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "alchemy",
+    "web3",
+    "viem",
+    "wallet-apis",
+    "ai-skills",
+    "saas-pack"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+    "directory": "plugins/saas-packs/alchemy-pack"
+  },
+  "homepage": "https://tonsofskills.com/learn/alchemy/",
+  "publishConfig": {
+    "access": "public"
+  }
+}

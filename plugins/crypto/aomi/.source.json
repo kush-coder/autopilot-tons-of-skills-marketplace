@@ -1,0 +1,33 @@
+{
+  "synced_from": {
+    "repo": "aomi-labs/skills",
+    "path": "plugins/aomi",
+    "branch": "main"
+  },
+  "last_sync": "2026-10-22T07:11:08.441Z",
+  "author": {
+    "name": "aomi-labs",
+    "github": "aomi-labs"
+  },
+  "license": "MIT",
+  "files_synced": 17,
+  "files": [
+    ".claude-plugin/plugin.json",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "skills/transact/SECURITY.md",
+    "skills/transact/SKILL.md",
+    "skills/transact/agents/openai.yaml",
+    "skills/transact/references/account-abstraction.md",
+    "skills/transact/references/apps.md",
+    "skills/transact/references/commands.md",
+    "skills/transact/references/drain-vectors.md",
+    "skills/transact/references/examples.md",
+    "skills/transact/references/gotchas.md",
+    "skills/transact/references/session.md",
+    "skills/transact/references/troubleshooting.md",
+    "skills/transact/references/workflows.md",
+    "skills/transact/templates/aomi-workflow.sh"
+  ]
+}

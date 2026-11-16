@@ -1,0 +1,17 @@
+{
+  "name": "quicknode-pack",
+  "version": "2.0.0",
+  "description": "18 governed QuickNode operator workflows for blockchain RPC and data infrastructure",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "quicknode",
+    "blockchain",
+    "rpc",
+    "operations",
+    "streams"
+  ]
+}

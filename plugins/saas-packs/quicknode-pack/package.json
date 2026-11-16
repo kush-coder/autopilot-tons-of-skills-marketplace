@@ -1,0 +1,35 @@
+{
+  "name": "@intentsolutionsio/quicknode-pack",
+  "version": "2.0.0",
+  "description": "18 governed QuickNode operator workflows for blockchain RPC and data infrastructure",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "skills/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "quicknode",
+    "blockchain",
+    "rpc",
+    "operations",
+    "streams"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+    "directory": "plugins/saas-packs/quicknode-pack"
+  },
+  "homepage": "https://tonsofskills.com/learn/quicknode/",
+  "publishConfig": {
+    "access": "public"
+  }
+}

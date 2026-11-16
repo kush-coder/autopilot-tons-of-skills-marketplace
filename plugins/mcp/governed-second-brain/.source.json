@@ -1,0 +1,30 @@
+{
+  "synced_from": {
+    "repo": "jeremylongshore/bobs-big-brain-plugin",
+    "path": ".",
+    "branch": "main"
+  },
+  "last_sync": "2026-10-05T02:12:31.613Z",
+  "author": {
+    "name": "Jeremy Longshore",
+    "github": "jeremylongshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "Apache-2.0",
+  "files_synced": 13,
+  "files": [
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
+    ".mcp.json",
+    "LICENSE",
+    "README.md",
+    "plugin-runtime/bootstrap.cjs",
+    "plugin-runtime/governed-brain.cjs",
+    "plugin-runtime/package-lock.json",
+    "plugin-runtime/package.json",
+    "skills/brain-save/SKILL.md",
+    "skills/brain-save/references/runtime-contract.md",
+    "skills/brain/SKILL.md",
+    "skills/brain/references/runtime-contract.md"
+  ]
+}

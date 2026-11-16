@@ -1,0 +1,18 @@
+{
+  "name": "flyio-pack",
+  "version": "2.0.0",
+  "description": "Operator-grade Fly.io skill pack for controlled app, Machine, data, security, deployment, and observability workflows (18 skills)",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "flyio",
+    "fly.io",
+    "saas",
+    "machines-api",
+    "deployment",
+    "operations"
+  ]
+}

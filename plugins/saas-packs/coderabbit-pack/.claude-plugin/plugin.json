@@ -1,0 +1,18 @@
+{
+  "name": "coderabbit-pack",
+  "version": "2.0.0",
+  "description": "Evidence-backed CodeRabbit operator workflows for reviews, CLI, configuration, security, governance, APIs, and incident response (24 skills)",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "coderabbit",
+    "saas",
+    "code-review",
+    "pull-requests",
+    "governance",
+    "security"
+  ]
+}

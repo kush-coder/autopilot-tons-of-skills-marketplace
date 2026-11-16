@@ -1,0 +1,79 @@
+{
+  "schema_version": "freshie-run-delta/v3",
+  "run_id": 138,
+  "from_tag": "run-138",
+  "to_tag": "run-138.1",
+  "dolt_commit": "hk2a9qcgp0dddgqiuvqavk8uf8hk03pq",
+  "run_coherence": {
+    "discovery_run_id": 138,
+    "header_total_skills": 2916,
+    "skill_rows": 2916,
+    "skill_row_delta": 0,
+    "skill_compliance_rows": 3493
+  },
+  "grade_export": {
+    "row_count": 3493,
+    "csv_sha256": "e5225298e333318dae1e51ae8d7d7e3e8fe7f3265934a1415f94e5898e8684e5",
+    "grade_counts": {
+      "A": 2880,
+      "B": 323,
+      "C": 132,
+      "D": 154,
+      "F": 4
+    }
+  },
+  "forge_proofs": {
+    "row_count": 0,
+    "records_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "class_counts": {
+      "E0": 0,
+      "E1": 0,
+      "E2": 0,
+      "E3": 0
+    },
+    "retained_e2_e3": 0,
+    "total_e2_e3": 0,
+    "records": []
+  },
+  "tables_changed": 3,
+  "schema_changes": [],
+  "rows_added": 0,
+  "rows_deleted": 0,
+  "rows_modified": 4257,
+  "tables": [
+    {
+      "table": "agent_compliance",
+      "diff_type": "modified",
+      "schema_change": false,
+      "data_change": true,
+      "rows_added": 0,
+      "rows_deleted": 0,
+      "rows_modified": 363
+    },
+    {
+      "table": "plugin_compliance",
+      "diff_type": "modified",
+      "schema_change": false,
+      "data_change": true,
+      "rows_added": 0,
+      "rows_deleted": 0,
+      "rows_modified": 401
+    },
+    {
+      "table": "skill_compliance",
+      "diff_type": "modified",
+      "schema_change": false,
+      "data_change": true,
+      "rows_added": 0,
+      "rows_deleted": 0,
+      "rows_modified": 3493
+    }
+  ],
+  "grade_regressions": [
+    {
+      "skill_path": "plugins/saas-packs/supabase-pack/skills/supabase-debug-bundle",
+      "from_grade": "A",
+      "to_grade": "B"
+    }
+  ]
+}

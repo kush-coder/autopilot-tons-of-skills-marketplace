@@ -1,0 +1,12 @@
+---
+import VendorPackTemplate from '../../../components/VendorPackTemplate.astro';
+import vendorPacks from '../../../data/vendor-packs.json';
+
+const vendorId = 'customerio';
+const vendor = vendorPacks.vendors.find((entry) => entry.id === vendorId);
+if (!vendor) {
+  return Astro.redirect('/learn/');
+}
+---
+
+<VendorPackTemplate vendor={vendor} variant="default" badgeMode="tier-and-count" />

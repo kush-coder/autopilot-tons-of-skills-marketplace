@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "description": "Advisory deterministic validation after an Edit or Write touches SKILL.md; reports findings without a blocking decision.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/sinker.sh\"",
+            "timeout": 20,
+            "description": "Advisory deterministic validation after an Edit or Write touches SKILL.md; reports findings without a blocking decision.",
+            "enabled": true,
+            "blocking": false
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "description": "When a supplied skill identifier is valid, record a local rollout event and invoke a background proposal after the configured threshold; this hook does not score rollouts.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/line.sh\"",
+            "timeout": 30,
+            "description": "When a supplied skill identifier is valid, record a local rollout event and invoke a background proposal after the configured threshold; this hook does not score rollouts.",
+            "enabled": true,
+            "blocking": false
+          }
+        ],
+        "matcher": ".*"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "description": "Advisory-only status check and rate-limit stamp for staged skills before Bash git commit or push; an enforced regression gate is not implemented.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/hook.sh\"",
+            "timeout": 120,
+            "description": "Advisory-only status check and rate-limit stamp for staged skills before Bash git commit or push; an enforced regression gate is not implemented.",
+            "enabled": true,
+            "blocking": false
+          }
+        ]
+      }
+    ]
+  }
+}

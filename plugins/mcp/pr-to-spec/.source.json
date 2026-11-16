@@ -1,0 +1,26 @@
+{
+  "synced_from": {
+    "repo": "jeremylongshore/pr-to-prompt",
+    "path": ".",
+    "branch": "main"
+  },
+  "last_sync": "2026-10-22T07:11:09.180Z",
+  "author": {
+    "name": "Jeremy Longshore",
+    "github": "jeremylongshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "files_synced": 9,
+  "files": [
+    ".claude-plugin/plugin.json",
+    ".claude/skills/pr-to-spec/SKILL.md",
+    ".claude/skills/pr-to-spec/references/cli-contract.md",
+    ".mcp.json",
+    "LICENSE",
+    "README.md",
+    "dist/mcp-bundle/index.js",
+    "dist/mcp-bundle/package.json",
+    "src/servers/pr-spec-analyzer.ts"
+  ]
+}

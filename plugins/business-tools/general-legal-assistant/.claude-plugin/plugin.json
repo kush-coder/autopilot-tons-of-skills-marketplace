@@ -1,0 +1,13 @@
+{
+  "name": "general-legal-assistant",
+  "version": "1.2.0",
+  "description": "AI-assisted contract review, risk analysis, document drafting, and compliance readiness review with 12 skills and 5 bundled review agents.",
+  "author": {
+    "name": "Intent Solutions",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "repository": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "homepage": "https://tonsofskills.com",
+  "license": "MIT",
+  "keywords": ["legal", "contracts", "nda", "compliance", "gdpr", "ccpa", "risk-analysis", "terms-of-service", "privacy-policy"]
+}

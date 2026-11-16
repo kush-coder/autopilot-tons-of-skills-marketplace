@@ -1,0 +1,18 @@
+{
+  "name": "persona-pack",
+  "version": "2.0.0",
+  "description": "Operator-grade Persona identity workflow pack with 18 skills for inquiry lifecycles, authentic webhooks, privacy, reliability, and governed production delivery",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "persona",
+    "identity-verification",
+    "kyc",
+    "webhooks",
+    "privacy",
+    "saas"
+  ]
+}

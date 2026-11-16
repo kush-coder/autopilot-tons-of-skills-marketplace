@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "scope": "three-required-context-producers-and-complete-ci-required-graph",
+  "repository_complete": false,
+  "workflows": [
+    {
+      "path": ".github/workflows/validate-plugins.yml",
+      "sha256": "13defa9b3e9881b0cbb58eedcc244e0f962dafc45b695f4320f68ec1d8644d26"
+    },
+    {
+      "path": ".github/workflows/secret-scan.yml",
+      "sha256": "a70053ad581480b0abbda26c6ddb404919839e81619ffa806adddb633cf97ad9"
+    },
+    {
+      "path": ".github/workflows/skill-conform.yml",
+      "sha256": "aa110d3073a8fe180776bd43d7ad5daf7013e51d535db7fb77ccf3187991ec18"
+    }
+  ],
+  "aggregate_policy": {
+    "path": "scripts/ci/fastlane.py",
+    "sha256": "bb10b952bf9b875531e6c7a63400fc69634c2c84fe6051a8a07f7240a90d98f0",
+    "authority": [
+      {
+        "path": "CLAUDE.md",
+        "line": 192,
+        "text": "## CI gate architecture — three required checks (rebuilt 2026-07; skill-conform added 2026-07-23)"
+      },
+      {
+        "path": "000-docs/727-AT-ARCH-master-modernization-blueprint.md",
+        "line": 864,
+        "text": "### 10.3 Bounded-swallow rule"
+      },
+      {
+        "path": "tests/ci/test_fastlane_workflow.py",
+        "line": 20,
+        "text": "REQUIRED, SKIPPABLE = POLICY.REQUIRED, POLICY.SKIPPABLE"
+      }
+    ]
+  },
+  "expected": {
+    "sites": 23,
+    "site_containers": 16,
+    "workflows": 3,
+    "jobs": 28,
+    "containers": 242,
+    "run_containers": 168,
+    "opaque_actions": 74,
+    "conditional_envelopes": 44
+  },
+  "sites": [
+    {
+      "id": "full-lane-fallback",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "classify-changes",
+      "step": 1,
+      "step_name": "Classify changed paths with the trusted policy",
+      "job_sha256": "4b0908264fb2d4e47f078df7b01936f4f6c37878222800c52707927d0df5d3c3",
+      "step_sha256": "bae7b8adc3ee0815c4247e4f24acca21139a91013acb5ee1885731d55f415ae1",
+      "run_sha256": "1bc7b5b3fb355a95a60d0cea19f72cf013f82fa198e57096f1215b6d2aa63dbf",
+      "anchor": {
+        "line": 15,
+        "text": "    exit 0"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Missing trusted base policy explicitly selects the full lane before returning success.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 39,
+          "text": "      - name: Classify changed paths with the trusted policy"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "safety-dependency-fallback",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 13,
+      "step_name": "Enforce the safety ratchet",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "592009d8a7bc847feb3aa5b3cf192b99bd5dd9e91ac1e95296c0b444992a8cd2",
+      "run_sha256": "0502a1eb56c0748cf95dd68637452811c09c4702d343a0334371517c8ca7ebf5",
+      "anchor": {
+        "line": 1,
+        "text": "python3 -c \"import yaml\" 2>/dev/null || python3 -m pip install --quiet pyyaml"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Failed import falls back to installation; installation failure is not suppressed.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 180,
+          "text": "      - name: Enforce the safety ratchet"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "ratchet-dependency-fallback",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "marketplace-compliance-ratchet",
+      "step": 5,
+      "step_name": "Enforce R1/R2/R3/R4 marketplace compliance ratchet",
+      "job_sha256": "6a6ff604cb9b6671cbbc8fa564218b85be7b3591debfeef39ed93396e1293f4a",
+      "step_sha256": "cc0bc6126335ee8fac0bd7abf25ea9ecaf40139e11dd592b885bb5004830e8ca",
+      "run_sha256": "01808192b383f66c41251f72686fa1dbc5a46b46e60b117b4c31cfd018e44071",
+      "anchor": {
+        "line": 1,
+        "text": "python3 -c \"import yaml\" 2>/dev/null || python3 -m pip install --quiet pyyaml"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Failed import falls back to installation; installation failure is not suppressed.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 818,
+          "text": "      - name: Enforce R1/R2/R3/R4 marketplace compliance ratchet"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "test-status-accumulator",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 10,
+      "step_name": "Run plugin tests (widened loop — every package.json with a test script)",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "0ac28de29e09eb0f0b736008710581a9ab2173436a633854e26406731b38a094",
+      "run_sha256": "3bd48cb4ba12e8204b3fdb5085ddf3004be616077636e15c50fafef569483d55",
+      "anchor": {
+        "line": 74,
+        "text": "    if \"${TEST_CMD[@]}\"; then"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Test failure is accumulated and propagated by the final fail check in this bound run body.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 956,
+          "text": "      - name: Run plugin tests (widened loop — every package.json with a test script)"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "catalog-drift-status",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 34,
+      "step_name": "Sync CLI marketplace catalog",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "f52645d81bb0c1c2056ef11c0894d8afb04102c45f02a02254de662d8522e80b",
+      "run_sha256": "232568b2bef02489e07c3a26b204604fe9cc0fee0e6f014d7352615ee45dc606",
+      "anchor": {
+        "line": 2,
+        "text": "if ! git diff --quiet .claude-plugin/marketplace.json; then"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "The inverted diff status selects an explicit exit 1 on catalog drift.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 322,
+          "text": "      - name: Sync CLI marketplace catalog"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "credential-informational-sweep",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 58,
+      "step_name": "Security scan - Informational sweep (non-blocking)",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "b63dc39b057d39478a2ebfcf3a1448bc8f60f6d131dd634f9c628f258b3439c6",
+      "run_sha256": "e30d8d8a76b7b725da343354b40414b821df1a9e2602de1177a3cc2baf79f417",
+      "anchor": {
+        "line": 20,
+        "text": "  grep -E \"['\\\"][^'\\\"]{20,}\" || true)"
+      },
+      "classification": "informational",
+      "rationale": "The workflow labels this sweep informational; the separate gitleaks context owns blocking secret scanning.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 548,
+          "text": "      - name: Security scan - Informational sweep (non-blocking)"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "dangerous-rm-scan",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 59,
+      "step_name": "Security scan - Dangerous patterns",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "f5fd097a53144ed494194db2e66dfa8901c57bdc96fbb1d2032eaaeec35508df",
+      "run_sha256": "3c87e800ed132bd615a21e1bd6d8cbd229c3056b004f5295c89f3c14afe01fbb",
+      "anchor": {
+        "line": 33,
+        "text": "DANGEROUS_RM=$(grep_allow_no_match -r -E \"rm\\s+-rf\\s+/(\\s|$|\\*)\" plugins/ | grep_allow_no_match -v \"/var/\" | grep_allow_no_match -v \"/tmp/\" | grep_allow_no_match -v \"/prometheus/\")"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Only grep's no-match status 1 is normalized; producer and exclusion-filter errors remain blocking under pipefail. Extracted-workflow tests cover matches, exclusions and real scan/filter errors.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 597,
+          "text": "          # grep status 1 means no matches; operational errors must still fail."
+        },
+        {
+          "path": "tests/test_ci_scan_failures.py",
+          "line": 112,
+          "text": "    def test_dangerous_scan_io_error_does_not_report_clean(self):"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "python-test-discovery",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 18,
+      "step_name": "Run Python tests",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "8353895f7aa8bce1fc5c1ff033fc64d65367d5e7e832ab87d61b79c2101b8c2f",
+      "run_sha256": "2cae59dbf4d6997a8620417566f688802fe45db92a8efcb156ba68323dc0a352",
+      "anchor": {
+        "line": 25,
+        "text": "TEST_FILES=$(find . -name \"test_*.py\" -o -name \"*_test.py\" | grep_allow_no_match -v \"__pycache__\" | grep_allow_no_match -v \"backups/\")"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Only grep's no-match status 1 is normalized; find traversal and exclusion-filter failures remain blocking under pipefail, including partial discovery output. Extracted-workflow tests preserve pytest arguments and failures.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 1175,
+          "text": "          # Normalize only grep's no-match status, never a find traversal error."
+        },
+        {
+          "path": "tests/test_ci_scan_failures.py",
+          "line": 163,
+          "text": "    def test_discovery_find_error_with_partial_matches_fails_before_pytest(self):"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "agent-dependency-bootstrap",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 31,
+      "step_name": "Validate agent frontmatter (report-only)",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "47c304f65274cfde778c04665640d7bd3ec8e439d0b21a944fa2af18f099190f",
+      "run_sha256": "67f55c92e26550b1de1af470d30d67a0d9661a65e346011562b15196f4c086de",
+      "anchor": {
+        "line": 1,
+        "text": "python3 -c \"import yaml\" 2>/dev/null || python3 -m pip install --quiet pyyaml"
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "A failed dependency import falls back to installation; installation failure remains blocking before the advisory validator. Extracted-step tests cover import success, successful and failed installs, and unchanged advisory validator errors.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": ".github/workflows/validate-plugins.yml",
+          "line": 297,
+          "text": "      - name: Validate agent frontmatter (report-only)"
+        },
+        {
+          "path": "tests/test_ci_agent_bootstrap.py",
+          "line": 68,
+          "text": "    def test_failed_install_stops_before_validator(self):"
+        }
+      ],
+      "deadline_marker": {
+        "line": 296,
+        "sha256": "44a4702e9c4e2fe56552117fd385bb2140d78a9f0351a5a0b09a7922f7e28756"
+      }
+    },
+    {
+      "id": "agent-advisory-validator",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 31,
+      "step_name": "Validate agent frontmatter (report-only)",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "47c304f65274cfde778c04665640d7bd3ec8e439d0b21a944fa2af18f099190f",
+      "run_sha256": "67f55c92e26550b1de1af470d30d67a0d9661a65e346011562b15196f4c086de",
+      "anchor": {
+        "line": 2,
+        "text": "python3 scripts/validate-skills-schema.py --agents-only || true"
+      },
+      "classification": "unresolved",
+      "rationale": "Advisory correctness validation has a date but lacks established current ownership and promotion authority.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": {
+        "line": 296,
+        "sha256": "44a4702e9c4e2fe56552117fd385bb2140d78a9f0351a5a0b09a7922f7e28756"
+      }
+    },
+    {
+      "id": "mcp-advisory-validator",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 32,
+      "step_name": "Validate .mcp.json configs (advisory + unambiguous gate)",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "5114e3fe37a1e6b52d6406dbc5887faf90d27e889613c7b5ce4a8212f55d4cf4",
+      "run_sha256": "adeac5780a51f52948d5267db0492cd8800f1c8994cbaecc56295cd7d93ea55c",
+      "anchor": {
+        "line": 1,
+        "text": "node scripts/validate-mcp-config.mjs || true"
+      },
+      "classification": "unresolved",
+      "rationale": "The following unambiguous gate enforces only a subset; current advisory ownership is unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": {
+        "line": 309,
+        "sha256": "072b2800b1106b1caa54501b378fec86d109b244c71816eed02d04649bf25aa2"
+      }
+    },
+    {
+      "id": "eval-warning-scan",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 59,
+      "step_name": "Security scan - Dangerous patterns",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "f5fd097a53144ed494194db2e66dfa8901c57bdc96fbb1d2032eaaeec35508df",
+      "run_sha256": "3c87e800ed132bd615a21e1bd6d8cbd229c3056b004f5295c89f3c14afe01fbb",
+      "anchor": {
+        "line": 41,
+        "text": "EVAL_USES=$(grep_allow_no_match -r -E \"eval\\s*\\(\" plugins/ | grep_allow_no_match -v \"README.md\" | grep_allow_no_match -v \"this.redis.eval\")"
+      },
+      "classification": "unresolved",
+      "rationale": "Only grep's no-match status 1 is normalized across discovery and both exclusion filters; operational errors fail the existing capture under pipefail. Matching eval findings remain warning-only; role and bounds remain unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "python-dependency-install",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 15,
+      "step_name": "Install Python test dependencies",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "ea3357190010050d0cbbb9f88575ac3f326df4165ed0949d77ac57098ac07aa2",
+      "run_sha256": "90118d578cf93f6233ef9c53998290995808ce9f12117bc2a2325456d48c98bc",
+      "anchor": {
+        "line": 14,
+        "text": "    pip install -r \"$req\" || true"
+      },
+      "classification": "unresolved",
+      "rationale": "Full-lane optional runtime installation remains best-effort without case-specific failure authority; the three-file fixture dependency closure is installed strictly afterward in both lanes.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "enterprise-validator-advisory",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 24,
+      "step_name": "Run validation with universal validator",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "1e56df88434fbae7e91d8c0388df7b4f343131a87f7fb5f8ebe0f11cd2dcc506",
+      "run_sha256": "94e64ffeca6d6763038ece1aa4921ca432b512a0dafb7858cf50fd86a2011b6a",
+      "anchor": {
+        "line": 11,
+        "text": "python3 scripts/validate-skills-schema.py --enterprise --show-low-grades || true"
+      },
+      "classification": "unresolved",
+      "rationale": "Report versus gate role and bounds are unresolved; the later CLI marker does not apply.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "cli-strict-advisory",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 24,
+      "step_name": "Run validation with universal validator",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "1e56df88434fbae7e91d8c0388df7b4f343131a87f7fb5f8ebe0f11cd2dcc506",
+      "run_sha256": "94e64ffeca6d6763038ece1aa4921ca432b512a0dafb7858cf50fd86a2011b6a",
+      "anchor": {
+        "line": 54,
+        "text": "node packages/cli/dist/index.js validate --strict || true"
+      },
+      "classification": "unresolved",
+      "rationale": "The CLI marker and historical issue reference do not establish a current owner.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": {
+        "line": 1289,
+        "sha256": "20718ff710137074cdc2eb0543e4dc9c6a2a8d8ed21455170af63e4024e9715b"
+      }
+    },
+    {
+      "id": "missing-slack-webhook",
+      "workflow": ".github/workflows/secret-scan.yml",
+      "job": "trufflehog",
+      "step": 2,
+      "step_name": "Notify Slack on failure",
+      "job_sha256": "06efbcb7cf1428e98941f773397a2d951a28f0b2085c4577634d0ed655dd1b7c",
+      "step_sha256": "cbe62ccfb1137d95583c0755f9fa5149fa556e8ea61df7e682a5b84df5e0f206",
+      "run_sha256": "85a46de61f91beacf66aba5fc19ca713bb281bb6f1752bbd2a8ae6a61befd446",
+      "anchor": {
+        "line": 3,
+        "text": "  exit 0"
+      },
+      "classification": "unresolved",
+      "rationale": "Missing notification configuration returns success; notification ownership and bound are unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "numeric-http-warning",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 59,
+      "step_name": "Security scan - Dangerous patterns",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "f5fd097a53144ed494194db2e66dfa8901c57bdc96fbb1d2032eaaeec35508df",
+      "run_sha256": "3c87e800ed132bd615a21e1bd6d8cbd229c3056b004f5295c89f3c14afe01fbb",
+      "anchor": {
+        "line": 48,
+        "text": "if grep -r -E \"curl.*http://[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\" plugins/ 2>/dev/null; then"
+      },
+      "classification": "unresolved",
+      "rationale": "Parent-shell status handling permits grep's no-match status 1 and fails operational errors. Matching numeric-HTTP findings remain warning-only; role and bounds remain unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "base64-warning",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 59,
+      "step_name": "Security scan - Dangerous patterns",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "f5fd097a53144ed494194db2e66dfa8901c57bdc96fbb1d2032eaaeec35508df",
+      "run_sha256": "3c87e800ed132bd615a21e1bd6d8cbd229c3056b004f5295c89f3c14afe01fbb",
+      "anchor": {
+        "line": 55,
+        "text": "if grep -r -E \"base64\\s+-d\" plugins/ 2>/dev/null; then"
+      },
+      "classification": "unresolved",
+      "rationale": "Parent-shell status handling permits grep's no-match status 1 and fails operational errors. Matching base64 findings remain warning-only; role and bounds remain unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "insecure-url-warning",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 60,
+      "step_name": "Security scan - Suspicious URLs",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "cf085d6c4bb286ac74f69520cace1e9c10a599199a2eed9e131753c239f6ec4d",
+      "run_sha256": "75ad2f24c7cc506ce4f5f829ec854fc79a041831ba4e0df0fca782fde7752f07",
+      "anchor": {
+        "line": 16,
+        "text": "if grep -r -E \"http://[^l]\" plugins/ | grep -v \"localhost\" | grep -v \"127.0.0.1\" 2>/dev/null; then"
+      },
+      "classification": "unresolved",
+      "rationale": "Parent-shell PIPESTATUS handling checks every producer/filter status under pipefail, permitting no-match status 1 but failing operational errors. Matching insecure-URL findings remain warning-only; role and bounds remain unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "short-url-warning",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "validate",
+      "step": 60,
+      "step_name": "Security scan - Suspicious URLs",
+      "job_sha256": "4b29c340320971c9959c2987ec8ad930c9f28dffb52e3bb037104acf6ae5198d",
+      "step_sha256": "cf085d6c4bb286ac74f69520cace1e9c10a599199a2eed9e131753c239f6ec4d",
+      "run_sha256": "75ad2f24c7cc506ce4f5f829ec854fc79a041831ba4e0df0fca782fde7752f07",
+      "anchor": {
+        "line": 23,
+        "text": "if grep -r -E \"(bit\\.ly|tinyurl\\.com|goo\\.gl)\" plugins/ 2>/dev/null; then"
+      },
+      "classification": "unresolved",
+      "rationale": "Parent-shell status handling permits grep's no-match status 1 and fails operational errors. Matching short-URL findings remain warning-only; role and bounds remain unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "package-test-script-discovery",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "test",
+      "step": 10,
+      "step_name": "Run plugin tests (widened loop — every package.json with a test script)",
+      "job_sha256": "94b592abb2fe964c3d4288488b1d8db714f6223437bab169608e305d5ca048c2",
+      "step_sha256": "0ac28de29e09eb0f0b736008710581a9ab2173436a633854e26406731b38a094",
+      "run_sha256": "3bd48cb4ba12e8204b3fdb5085ddf3004be616077636e15c50fafef569483d55",
+      "anchor": {
+        "line": 31,
+        "text": "    if ! package_matches '\"test\":' \"$package\" && ! package_matches '\"test:ci\":' \"$package\"; then"
+      },
+      "classification": "unresolved",
+      "rationale": "Only grep's no-match status 1 selects no-test/Python/test:ci branches; operational errors in all four queries terminate before package commands. Remaining discovery-policy disposition is unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    },
+    {
+      "id": "push-parent-fallback",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "scan-synced-content",
+      "step": 4,
+      "step_name": "Scan pushed plugin content (push to main)",
+      "job_sha256": "235a080748b5e77d832a227234263990e5607eabf1a3275e0dda57f79449f6d0",
+      "step_sha256": "86d3fbe988376afb44bbd4448d9ab4316f31e324847dbcd862c2593e077c605e",
+      "run_sha256": "cfdfb284ae8da9b8db8f6be85160732ce98262798930828c8215efe46f241662",
+      "anchor": {
+        "line": 7,
+        "text": "  BASE=\"$(git rev-parse --verify 'HEAD~1^{commit}' 2>/dev/null)\""
+      },
+      "classification": "authorized_control_flow",
+      "rationale": "Zero or unavailable push bases select only the verified parent commit under 793; unavailable parents fail before scanning, and comparison/staged/untracked enumeration failures fail operationally rather than reporting clean. Available-base scans preserve full grading.",
+      "owner": null,
+      "promotion": null,
+      "authority": [
+        {
+          "path": "000-docs/793-AA-AACR-epic-4-scan-push-main.md",
+          "line": 19,
+          "text": "unknown-`before` fallback to the parent commit so a forced push cannot silently pass) with"
+        },
+        {
+          "path": "tests/test_ci_push_scan_parent.py",
+          "line": 77,
+          "text": "    def test_available_parent_preserves_full_refuse_grading(self):"
+        },
+        {
+          "path": "tests/test_ci_push_scan_parent.py",
+          "line": 94,
+          "text": "    def assert_fails_before_scanner(self):"
+        },
+        {
+          "path": "scripts/scan-synced-content.test.mjs",
+          "line": 1076,
+          "text": "  test(`changed CLI fails operationally: ${JSON.stringify(options)}`, () => {"
+        }
+      ],
+      "deadline_marker": null
+    },
+    {
+      "id": "sync-branch-warn-mode",
+      "workflow": ".github/workflows/validate-plugins.yml",
+      "job": "scan-synced-content",
+      "step": 3,
+      "step_name": "Scan changed plugin content",
+      "job_sha256": "235a080748b5e77d832a227234263990e5607eabf1a3275e0dda57f79449f6d0",
+      "step_sha256": "593ba6126912a738c7d4cbed5548701da3362146d4db470ca8af5413d645d544",
+      "run_sha256": "647136af7a9864fcad2e0eab25bbd5f589b17d2fbe7c3cd968665a5f11ffa82f",
+      "anchor": {
+        "line": 14,
+        "text": "          advisory) MODE=\"advisory\" ;;"
+      },
+      "classification": "unresolved",
+      "rationale": "Trusted producer provenance limits the existing sync advisory scanner mode to its actual same-repository PR and exact head; missing proof retains full grading. Authentication does not settle the remaining advisory ownership/bound or human CHALLENGE approval policy, so this site remains unresolved.",
+      "owner": null,
+      "promotion": null,
+      "authority": [],
+      "deadline_marker": null
+    }
+  ]
+}

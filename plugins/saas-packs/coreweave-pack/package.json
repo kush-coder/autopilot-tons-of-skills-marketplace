@@ -1,0 +1,54 @@
+{
+  "name": "@intentsolutionsio/coreweave-pack",
+  "private": true,
+  "version": "1.0.7",
+  "description": "Community CoreWeave GPU operations pack (26 skills): diagnostic tools and scoped operator guides; not affiliated with or endorsed by CoreWeave, Inc.",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "QUALITY.md",
+    "offline-results.json",
+    "docs/*.md",
+    "agents/*.md",
+    "shared/*.py",
+    "shared/*.md",
+    "scripts/*.py",
+    "skills/*/SKILL.md",
+    "skills/*/PRD.md",
+    "skills/*/ARD.md",
+    "skills/*/eval-spec.yaml",
+    "skills/*/docs/*.md",
+    "skills/*/references/*.md",
+    "skills/*/scripts/*.py",
+    "skills/*/scripts/requirements.txt",
+    "skills/*/tests/fixtures/*.json",
+    "skills/*/assets/**/*.tf",
+    "skills/*/assets/**/*.tftest.hcl",
+    "skills/*/assets/**/.terraform.lock.hcl"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "coreweave",
+    "gpu-cloud",
+    "ml-infrastructure",
+    "hpc",
+    "ai-skills",
+    "saas-pack"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/unofficial-coreweave-operator-pack.git"
+  },
+  "homepage": "https://tonsofskills.com/learn/coreweave/",
+  "publishConfig": {
+    "access": "public"
+  }
+}

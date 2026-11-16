@@ -1,0 +1,29 @@
+{
+  "synced_from": {
+    "repo": "jeremylongshore/box-cloud-filesystem",
+    "path": ".",
+    "branch": "main"
+  },
+  "last_sync": "2026-10-01T05:13:23.857Z",
+  "author": {
+    "name": "Jeremy Longshore",
+    "github": "jeremylongshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "files_synced": 12,
+  "files": [
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
+    "LICENSE",
+    "README.md",
+    "hooks/hooks.json",
+    "scripts/box-init-workspace.sh",
+    "scripts/box-sync-on-write.sh",
+    "scripts/box-sync-summary.sh",
+    "scripts/update-gist.sh",
+    "skills/box-cloud-filesystem/SKILL.md",
+    "skills/box-cloud-filesystem/references/operations-guide.md",
+    "skills/box-cloud-filesystem/references/sync-pattern.md"
+  ]
+}

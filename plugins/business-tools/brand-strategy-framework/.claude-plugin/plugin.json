@@ -1,0 +1,19 @@
+{
+  "name": "brand-strategy-framework",
+  "version": "1.8.0",
+  "description": "A seven-part brand strategy framework for identity, audience, positioning, messaging, visual principles, channels and measurement.",
+  "author": {
+    "name": "Rowan Brooks",
+    "url": "https://github.com/rowanbrooks100"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "keywords": [
+    "brand-strategy",
+    "marketing",
+    "branding",
+    "positioning",
+    "messaging",
+    "brand-guidelines"
+  ]
+}

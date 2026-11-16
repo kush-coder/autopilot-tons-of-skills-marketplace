@@ -1,0 +1,23 @@
+{
+  "name": "crypto-derivatives-tracker",
+  "version": "2.0.0",
+  "description": "Read-only crypto derivatives research from live public exchange data: funding, open interest, basis, liquidations, options",
+  "author": {
+    "name": "Intent Solutions IO",
+    "email": "jeremy@intentsolutions.ai",
+    "url": "https://intentsolutions.ai"
+  },
+  "repository": "https://github.com/jeremylongshore/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "crypto",
+    "derivatives",
+    "futures",
+    "perpetuals",
+    "funding-rate",
+    "open-interest",
+    "options",
+    "basis",
+    "liquidations"
+  ]
+}

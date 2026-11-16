@@ -1,0 +1,9 @@
+node_modules/
+# Ship only the self-contained manual stdio entry.
+!dist/
+dist/*
+!dist/index.js
+*.log
+.DS_Store
+data/
+experiments.json

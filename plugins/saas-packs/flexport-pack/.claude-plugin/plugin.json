@@ -1,0 +1,17 @@
+{
+  "name": "flexport-pack",
+  "version": "2.0.0",
+  "description": "24 governed Flexport v3 and MCP operator workflows for freight, trade data, webhooks, and secure integrations",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "flexport",
+    "freight",
+    "supply-chain",
+    "mcp",
+    "operations"
+  ]
+}

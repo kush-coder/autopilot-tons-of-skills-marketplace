@@ -1,0 +1,37 @@
+{
+  "name": "@intentsolutionsio/ga4-pack",
+  "version": "2.0.0",
+  "description": "GA4 report forensics, realtime measurement verification and BigQuery export diagnostics with executable analyzers and bounded optional collectors.",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "skills/",
+    "000-docs/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "google-analytics",
+    "ga4",
+    "analytics",
+    "data-api",
+    "bigquery",
+    "saas-pack"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+    "directory": "plugins/saas-packs/ga4-pack"
+  },
+  "homepage": "https://tonsofskills.com/learn/ga4/",
+  "publishConfig": {
+    "access": "public"
+  }
+}

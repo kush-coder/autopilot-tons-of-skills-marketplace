@@ -1,0 +1,23 @@
+{
+  "name": "x-bug-triage-plugin",
+  "version": "0.6.7",
+  "private": true,
+  "description": "Public X complaint intake and local triage prototype with explicitly labeled downstream contract stubs",
+  "author": "Jeremy Longshore <jeremy@intentsolutions.io>",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.base.json",
+    "test": "bun test",
+    "start": "bun mcp/triage-server/server.ts",
+    "dev": "echo 'See 000-docs/010-OP-GUID-runbook-local-dev.md'",
+    "db:migrate": "bun db/migrate.ts",
+    "db:reset": "rm -f data/triage.db && bun db/migrate.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

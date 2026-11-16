@@ -1,0 +1,19 @@
+{
+  "name": "vastai-pack",
+  "version": "2.0.0",
+  "description": "Evidence-gated Vast.ai operator pack for GPU rentals, Serverless, governance, recovery, and cost control (24 skills)",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vastai",
+    "vast.ai",
+    "saas",
+    "gpu-operations",
+    "serverless",
+    "governance",
+    "recovery"
+  ]
+}

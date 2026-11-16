@@ -1,0 +1,21 @@
+{
+  "synced_from": {
+    "repo": "metrox-eth/quit-sponsor",
+    "path": ".",
+    "branch": "main"
+  },
+  "last_sync": "2026-10-01T05:34:58.836Z",
+  "author": {
+    "name": "metr0x",
+    "github": "metrox-eth"
+  },
+  "license": "MIT",
+  "files_synced": 5,
+  "files": [
+    "LICENSE",
+    "README.md",
+    "SAFETY.md",
+    "SKILL.md",
+    "references.md"
+  ]
+}

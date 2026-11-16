@@ -1,0 +1,12 @@
+# Python cache
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Retired DoltLite experiment: preserve any existing local sidecars privately.
+# Freshie's authoritative public history uses the full-Dolt exporter.
+doltlite/
+*.db.graphlock
+*.db-lock
+.*.db.sync.lock

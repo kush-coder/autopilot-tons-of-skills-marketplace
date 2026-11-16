@@ -1,0 +1,19 @@
+{
+  "name": "arbitrage-opportunity-finder",
+  "version": "2.0.0",
+  "description": "Compare live bid/ask for a crypto pair across exchanges and show spreads net of stated fees; read-only",
+  "author": {
+    "name": "Intent Solutions IO",
+    "email": "jeremy@intentsolutions.ai",
+    "url": "https://intentsolutions.ai"
+  },
+  "repository": "https://github.com/jeremylongshore/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "arbitrage",
+    "crypto",
+    "spreads",
+    "order-book",
+    "bid-ask"
+  ]
+}

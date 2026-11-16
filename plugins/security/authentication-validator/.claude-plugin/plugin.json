@@ -1,0 +1,17 @@
+{
+  "name": "authentication-validator",
+  "version": "1.28.0",
+  "description": "Review authentication declarations and verify explicit local JWT profiles",
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "[email protected]"
+  },
+  "repository": "https://github.com/jeremylongshore/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "compliance",
+    "auditing",
+    "agent-skills"
+  ]
+}

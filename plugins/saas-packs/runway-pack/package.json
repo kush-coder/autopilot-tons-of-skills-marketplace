@@ -1,0 +1,38 @@
+{
+  "name": "@intentsolutionsio/runway-pack",
+  "version": "2.0.0",
+  "description": "Operator-grade Runway Dev workflows for secure, model-aware, asynchronous media generation (18 skills)",
+  "main": "README.md",
+  "type": "module",
+  "files": [
+    "README.md",
+    ".claude-plugin/",
+    "skills/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "runway",
+    "ai-video",
+    "generative-media",
+    "creative-tools",
+    "task-lifecycle",
+    "media-governance",
+    "ai-skills",
+    "saas-pack"
+  ],
+  "author": {
+    "name": "Jeremy Longshore",
+    "email": "jeremy@intentsolutions.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+    "directory": "plugins/saas-packs/runway-pack"
+  },
+  "homepage": "https://tonsofskills.com/learn/runway/",
+  "publishConfig": {
+    "access": "public"
+  }
+}
